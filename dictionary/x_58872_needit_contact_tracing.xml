@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Contact Tracing " max_length="40" name="x_58872_needit_contact_tracing" type="collection">
+        <element attributes="encode_utf8=false" label="Assigned to" max_length="32" name="assignedto" reference="sys_user" type="reference"/>
+        <element attributes="encode_utf8=false" default="5463d5991b313010c3a2877ddc4bcb4b" label="Assignment Group" max_length="32" name="assignmentgrp" reference="sys_user_group" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Contact Number" max_length="40" name="contactno" type="string"/>
+        <element label="Dry Cough" max_length="40" name="drycough" type="boolean"/>
+        <element label="Headache" max_length="40" name="headache" type="boolean"/>
+        <element label="Lack of smell" max_length="40" name="lackofsmell" type="boolean"/>
+        <element label="Lack of taste" max_length="40" name="lackoftaste" type="boolean"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="no_sort=true,slushbucket_ref_no_expand=true" label="Symptoms" max_length="1024" name="symptoms" type="glide_list"/>
+        <element attributes="edge_encryption_enabled=true" label="Temperature" max_length="40" name="temp" type="string"/>
+        <element label="Travel History" max_length="40" name="travel_history" type="boolean"/>
+        <element attributes="encode_utf8=false" label="Employee Name" max_length="32" name="u_empname" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="ut2" label="Location" max_length="40" name="u_location" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Uptown Tower 2" sequence="0" value="ut2"/>
+                <element inactive_on_update="false" label="Uptown Tower 3" sequence="1" value="ut3"/>
+                <element inactive_on_update="false" label="Cybergate Tower 1" sequence="2" value="cg1"/>
+                <element inactive_on_update="false" label="Cybergate Tower 2" sequence="3" value="cg2"/>
+                <element inactive_on_update="false" label="Cybergate Tower 3" sequence="4" value="cg3"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="u_empname"/>
+        </index>
+        <index name="index2">
+            <element name="assignmentgrp"/>
+        </index>
+        <index name="index3">
+            <element name="assignedto"/>
+        </index>
+    </element>
+</database>
